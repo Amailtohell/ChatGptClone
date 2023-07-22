@@ -25,14 +25,14 @@ app.post('/', async (req, res) =>{
   
      try {
        const { message } = req.body;
-       console.log(message, "message")
-       console.log(message);
+      //  console.log(message, "message")
+      //  console.log(message);
 
        const response = await openai.createCompletion({
          model: "text-davinci-003",
          prompt: `${message}`,
-         max_tokens: 1,
-         temperature: 0,
+         max_tokens: 50,
+         temperature: 0.7,
        });
 
        //  console.log(response); // Log the entire response object
